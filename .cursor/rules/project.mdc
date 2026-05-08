@@ -1,0 +1,10 @@
+---
+description: Mandatory project rules
+alwaysApply: true
+---
+
+Follow `AGENTS.md`.
+
+Priority: minimize token usage.
+
+Do not produce long explanations, full-file rewrites, repository summaries, or chain-of-thought.
