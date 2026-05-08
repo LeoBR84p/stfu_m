@@ -15,6 +15,7 @@ Max output: essential content only. No token waste.
 - User-facing answer: match user language.
 - Visible logic summaries: English only.
 - Hidden CoT: never expose.
+- Internal reasoning: never print, never summarize unless `[LOGIC]` prefix required.
 - No greetings.
 - No recap.
 - No filler.
@@ -31,11 +32,12 @@ Max output: essential content only. No token waste.
 Use `[LOGIC]` only when task involves multi-step reasoning or ambiguous scope.
 
 - Prefix: `[LOGIC]`
-- Style: compact, caveman-like, lemmatized English, no natural language punctuation, no stop-words.
+- Style: compact, no articles, caveman-like, lemmatized English, no natural language punctuation, no stop-words.
 - Syntax: pipeline / Julia-like.
+- Strict ban: no narrative, no full sentences, no verbs conjugated
 
 Example:
 
 ```text
-    [LOGIC] input |> inspect(scope); constraint: no_code; output: minimal_answer.
+    [LOGIC] input=cursor |> check(rules_file); output: .cursorrules or .cursor/rules/*.mdc
 ```
